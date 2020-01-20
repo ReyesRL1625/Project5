@@ -1,0 +1,56 @@
+wechall name: rlreyes6
+
+[Level 0]: 
+To solve this level, I set up all the bashrc and ssh files as needed
+and then typed in ssh bandit0@bandit.labs.overthewire.org -p 2220 and
+used the password that they had
+
+[Level 0-->1]:
+To locate the readme file, I stayed in bandit0 and did ls to check to
+make sure the readme file was there. From there, I used cat to get the
+password. From there, I did ssh bandit1@bandit.labs.overthewire.org -p 2220 and 
+used this password
+
+[Level 1-->2]:
+Just as the previous level, I used ls to check to see if the file was
+there. I knew - was a special character, so I tried '-' to see if that
+would work but it did not. From here I used the prefix we kept using
+in the setup for OverTheWire, so my input looked like ./- which did work.
+From here, I got the password and moved to the next level 
+
+[Level 2-->3]:
+To start, I did ls to check the exact file name. Usually, when I use
+console and there are spaces, I put '' around the name to fix it. 
+I decided to try that out and it worked, so I got the password and 
+moved on to the next level.
+
+[Level 3-->4]:
+To solve this, I used cd to get into the inhere folder. From there,
+I did the command ls -a to show me all of the files that were in the
+folder, including the hidden ones. This gave me the name of the file
+which was called .hidden, so I used cat to get the password, then 
+moved onto the next level.
+
+[Level 4-->5]:
+In order to find the readable file, I started by doing the file *
+command inside of the inhere folder. For some reason, when I did
+this, the file names would come up as 'ile00' instead of 'file00'.
+This forced me to check each individual file by doing 'file file00'.
+By doing this, I found out the 7th file was the only one with ASCII
+values, so I got the password from inside of this file and
+continued onto the next level.
+
+[Level 5-->6]:
+For this level, I referenced the find linux command list. Here,
+there was a section for megabytes, so I looked up what bytes is in
+linux and found that it was c. I also found how to find if a file
+is executable through this website: 
+https://superuser.com/questions/38981/how-can-i-find-only-the-executable-files-under-a-certain-directory-in-linux
+With these two resources, I split it down into two processes.
+First step, I entered "find -size 1033c", which only gave me
+on result: file2 in maybehere07. After that, I entered the command
+"find -size 1033c -executable" to find all of them that were
+executable. This returned nothing, concluding that the file I
+originally found was not executable. I used cat to get the
+password and continued on.
+
